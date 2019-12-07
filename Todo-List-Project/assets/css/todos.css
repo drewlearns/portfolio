@@ -1,0 +1,116 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	background: #8e9eab;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+}
+li{
+	background-color: #ffffff;
+	padding: 0;
+	height: 60px;
+	color: #666;
+	line-height: 60px;
+	font-size: 18px;
+
+}
+li:nth-child(2n){
+	background-color: #f7f7f7;
+}
+li>span {
+	width: 30px;
+	height: 100%
+	padding: 0;
+}
+#container {
+	 width: 360px;
+	 margin: 100px auto;
+	 font-size: 1em;
+	 line-height: 1.4em;
+	 width: 360px;
+	 box-shadow: 0px 0px 30px  rgba(0,0,0,0.3);
+}
+h1 {
+	text-align: left;
+	background-color: #2980b9;
+	margin: 0;
+	color: white;
+	padding: 10px 40px;
+	text-transform: uppercase;;
+	font-size: 2em;
+	font-weight: normal;
+	line-height: 40px;
+	height: 80px;
+}
+.checked{
+	color: #666666a1;
+	text-decoration: line-through;
+}
+input{
+	padding: 13px 13px 13px 20px;
+	background-color: #f7f7f7;
+	font-size: 1.2em;
+	width: 100%;
+	height: 60px;
+	line-height: 40px;
+	box-sizing: border-box;	/*webkit stuff needs to go here for cross browser support of box-sizing*/
+	color: #2980b9;
+	border: none;
+}
+input:focus {
+	border: 3px solid #2980b9;
+	background-color: #fff;
+	outline: none;
+}
+li span{
+	width: 0;
+	width: 0;
+	color: white;
+	background-color: red;
+	height: 60px;
+	line-height: 60px;
+	justify-content: center;
+	text-align: center;
+	opacity: 0;
+	display: inline-block;
+	font-size: 1.4em;
+	margin-right: 10px;
+}
+li:hover span {
+	width: 40px;
+	opacity: 1;
+	transition: 0.3s linear;
+	margin-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+h1 span{
+	color: white;
+	font: 2em;
+	float: right;
+	-webkit-animation-name: new; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: new;
+  animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes new {
+  from {color: green;}
+  to {color: white;}
+}
+
+/* Standard syntax */
+@keyframes new {
+  from {color: green;}
+  to {color: white;}
+}
+a{
+	text-decoration: none;
+	color: #2980b9;
+}

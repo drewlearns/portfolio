@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Face Game</title>
+  </head>
+  <style>
+      body{
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+      h1{
+          color: rgb(29, 66, 88);
+      }
+      p{
+          color: rgb(110, 193, 228);
+      }
+      div{
+          position: absolute;
+          width: 500px;
+          height: 500px;
+      }
+      #rightSide{
+          border-left: 1px solid black;
+          left: 500px;
+      }
+  </style>
+  <body id="theBody" onload="generateFaces()">
+      <h1>Drew Learns how to make a Face Matching Game</h1>
+      <p>click on the extra smiling face in the left column</p>
+      <hr>
+      <div class="container">
+      <div class="leftside" id="leftSide"></div>
+      <div class="rightSide" id="rightSide"></div>
+      </div>
+      <script>
+          let level = 1
+function generateFaces() {//CREATE SOME VARIABLES
+    let theBody = document.getElementById("theBody");
+    let theLeftSide = document.getElementById("leftSide");
+    let theRightSide = document.getElementById("rightSide");
+    let numberOfFaces = 5;
+
+
+    //CREATE A LOOP THAT ALLOWS YOU TO GENERATE THE REQUIRED NUMBER OF SMILEY IMAGES ON THE LEFT SIDE
+    for (var i = 0; i < numberOfFaces; i++) {
+        //CREATE IMG ELEMENT VARIABLES (SETTING POSITION)
+        let x = Math.floor(Math.random() * 400);
+        let y = Math.floor(Math.random() * 400);
+        let image = document.createElement("img");
+        //IMAGE ELEMENT ATTRIBUTES AND SOURCE
+        image.src =
+            "https://drewlearns.com/wp-content/uploads/2019/10/About-Page-Drew-Karriker-9922-185x185-removebg-preview.png";
+        image.setAttribute(
+            "style",
+            'position: absolute; border: 1px solid rgb(29, 66, 88); border-radius: 50%; width: 100px; background-color: rgb(29, 66, 88); top: ' + y + 'px;' + 'left: ' + x + 'px;'
+        );
+        //ADD IMAGE TO THE LEFT SIDE
+        theLeftSide.appendChild(image);
+    }
+
+    //CLONE theLeftSide DIV INTO rightSide DIV
+    let leftSideImages = theLeftSide.cloneNode(true);
+    theRightSide.appendChild(leftSideImages);
+
+    //REMOVE THE LAST CHILD ON THE RIGHT
+    theRightSide.lastChild.removeChild(theRightSide.lastChild.lastChild);
+
+    //ADD LAST SMILEY FACE ADDED - CREATE CLICK EVENT
+    theLeftSide.lastChild.onclick = function nextLevel(event) {
+        event.StopPropagation();
+        numberOfFaces += 5;
+        generateFaces();
+    }
+    // ADD SOME CLICK EVENTS:
+
+    //WRONG IMAGE:
+    theLeftSide.lastChild.onclick = function nextLevel(event) {
+        event.stopPropagation();
+        numberOfFaces += 5;
+        level++;
+        alert('You did it, now try level ' + level + '!');
+        generateFaces();
+    }
+
+    //USER CLICKS ANYTHING OTHER THAN THE RIGHT IMAGE
+    theBody.onclick = function gameOver(event) {
+        theBody.onClick = null;
+        theLeftSide.lastChild.onclick = null;
+        let theNode = document.getElementById('theBody')
+        while (theNode.firstChild) theNode.removeChild(theNode.firstChild);
+        alert('Game Over! \n\n Looks like you clicked wrong. \n\n To try again, reload the page.');
+    }
+}
+        </script>
+  </body>
+</html>

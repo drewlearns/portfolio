@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS + CSS Clock</title>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="numbers">
+          <!--Row 1 -->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div>12</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+                   <!--Row 2-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div>11</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div>1</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 3-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 4-->
+         <div></div>
+         <div>10</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div style="text-align: left;"">2</div>
+         <div></div>
+         <div></div>
+          <!--Row 5-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 6-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 7-->
+         <div>9</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div style = "width: 2em; text-align: left;"> &nbsp; &nbsp;3</div>
+         <div></div>
+         <div></div>
+          <!--Row 8-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 9-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 10-->
+         <div></div>
+         <div>8</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div style="width:23px; text-align: right;"> 4</div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 11-->
+          <!--Row 12-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 13-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div style="text-align: right">7</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div style="text-align:right;">5</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 14-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div>6</div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+          <!--Row 15-->
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+        <div class="center hand"></div>
+      </div>
+    </div>
+
+    <style>
+      html {
+        background-color: darkgrey;
+        background-size: cover;
+        font-family: "helvetica neue";
+        text-align: center;
+        font-size: 10px;
+      }
+      div{
+        width: 1em;
+        height: 1em;
+      }
+      body {
+        margin: 0;
+        font-size: 2rem;
+        display: flex;
+        flex: 1;
+        min-height: 100vh;
+        align-items: center;
+      }
+      .clock {
+        width: 30rem;
+        height: 32rem;
+        border: 20px solid rgb(84, 34, 34);
+        border-radius: 50%;
+        margin: 50px auto;
+        position: relative;
+        padding: 2rem;
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+          inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: silver;
+        padding: 0;
+      }
+
+      .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: translateY(
+          -3px
+        ); /* account for the height of the clock hands */
+        background-color: rgb(227, 224, 224);
+        border-radius: 100%;
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+          inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .hand {
+        width: 50%;
+        height: 6px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 100%;
+        border-top-left-radius: 100%;
+        border-bottom-left-radius: 5px;
+        background: black;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        z-index: 1;
+      }
+      .hour-hand {
+        width: 25%;
+        left: 25%;
+      }
+      .second-hand {
+        background-color: red;
+      }
+      .center {
+        width: 20px;
+        height: 20px;
+        background-color: silver;
+        z-index: 300;
+        border-radius: 100%;
+        left: 43%;
+      }
+      body {
+        font-family: fantasy;
+        font-size: 2em;
+        font-weight: 900;
+      }
+      .numbers{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: .2em;
+      }
+      
+    </style>
+
+    <script>
+      const secondHand = document.querySelector(".second-hand");
+      const minuteHand = document.querySelector(".min-hand");
+      const hoursHand = document.querySelector(".hour-hand");
+      function setDate() {
+        const now = new Date();
+
+        //SECONDS
+
+        const seconds = now.getSeconds();
+        const secondsDegrees = (seconds / 60) * 360 + 90;
+        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+        //MINUTE HAND
+
+        const minutes = now.getUTCMinutes();
+        const minDegrees = (minutes / 60) * 360 + 90;
+        minuteHand.style.transform = `rotate(${minDegrees}deg)`;
+
+        //HOUR HAND
+        const hours = now.getHours();
+        const hourDegrees = (hours / 12) * 360 + 90;
+        hoursHand.style.transform = `rotate(${hours}deg)`;
+        console.log(hours);
+        console.log((hoursHand.style.transform = `rotate(${hourDegrees}deg)`));
+      }
+      setInterval(setDate, 1000);
+    </script>
+  </body>
+</html>
