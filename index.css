@@ -83,4 +83,5 @@ a#link:hover{color: yellow;}
   margin: auto;
   width: 300px;
   border-radius: 5px;
+  text-align: center;
 }
