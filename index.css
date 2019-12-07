@@ -75,3 +75,12 @@ a#link:hover{color: yellow;}
    top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 
   }
+.note{
+  color: white;
+  text-transform: uppercase;
+  background: grey;
+  padding: 0;
+  margin: auto;
+  width: 300px;
+  border-radius: 5px;
+}
