@@ -9,6 +9,17 @@ app.listen(4000, () => {
 });
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// MongoDB connection
+mongoose.connect('mongodb+srv://drewlearns:flysuperfly@drewlearns-8lmq1.mongodb.net/test?retryWrites=true&w=majority', {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(function (){
+	console.log('Connected to DB');
+}).catch(err => {
+	console.log('Error: ', err.message);
+});
+
+
 //GLOBAL VARIABLES
 let description =
   "This is a comprehensive project to cover all the the things from Colt Steele's 'The Web Developer Bootcamp from Udemy 'https://www.udemy.com/share/101W9CCUAec1xQRXg=/' This covers Javascript, Node.js, Express, MongoDB, REST APIs, Bootstrap 4, HTML5, and CSS";
