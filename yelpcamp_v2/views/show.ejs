@@ -1,7 +1,16 @@
 <%- include ("./partials/header") %>
-<h1><%=campground.name%></h1>
+<div>
+    <div class="container">
+    <h1><%=campground.name%></h1>
+    </div>
+    <div class="container">
+        <img src="<%= campground.image %>">
+        <p><%= campground.description %></p>
 
-<img src="<%= campground.image %>">
+    </div>
+    <p class="right text-right">
+    <a href="/campgrounds" class="btn btn-primary">Go back ⏎ </a>
+    </p>
+</div>
 
-<p><%= campground.description %></p>
 <%- include ("./partials/footer") %>
