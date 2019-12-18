@@ -1,8 +1,9 @@
 //APP CONFIG
-const   bodyParser  = require("body-parser"),
-        express     = require("express"),
-        app         = express(),
-        mongoose    = require("mongoose")
+const express = require("express"),
+    app = express(),
+    methodOverride = require("method-override"),
+    bodyParser = require("body-parser"),
+    mongoose = require("mongoose")
 //MONGOOSE SETUP
 mongoose.connect("mongodb://localhost/restful-blog-app", {
     useNewUrlParser: true,
@@ -14,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 //SERVES CUSTOM STYLES SHEET
 app.use(express.static('public'));
+// METHOD OVERRIDE ALLOWS PUT OVERRIDES IN POST REQUESTS EJS FILES
+app.use(methodOverride.("_method"));
 //CUSTOM CONNECTION READOUT
 app.listen(process.env.PORT, process.env.IP, () => {
     console.log(`
@@ -74,6 +77,19 @@ app.get('/blogs', (req, res) => {
 })
 
 // - UPDATE
+app.put('/blogs/:id', (req, res) =>{
+    Blog.findByIdAndUpdate(req.params.id, req, params.blog, (err, foundblog) => {
+        err ? (res.redirect('/blogs/'${req.params.id})) : (res.render('edit', {blog : foundBlog}))
+    })
+    res.render('/blog/:id');
+});
+// - EDIT
+app.get('/blogs/:id', (res, req) => {
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        err ? (res.redirect('/blogs')) : (res.render('edit', {blog : foundBlog}))
+});
+    res.render('edit');
+});
 // - DELETE
 
 
