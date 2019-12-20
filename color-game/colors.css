@@ -31,7 +31,6 @@ body {
   .menu {
     background-color: #d2d2d2d2;
     display: grid;
-    grid-template-areas: 1fr 1fr 1fr;
     grid-column-gap: 10%;
     margin: auto;
     padding: 1%;
