@@ -68,7 +68,11 @@ app.get("/campgrounds/:id", (req, res) => {
     });
 });
 
-app.listen(process.env.PORT, process.env.IP, () => {
+//Commented out to allow interchanging with local and aws cloud9 environments with the following 2 lines.
+// - cloud9:
+//app.listen(process.env.PORT, process.env.IP, () => {
+// - local:
+app.listen(3000, () => {
     console.log(`
    	**********************************************************
 	       __                  __                          
