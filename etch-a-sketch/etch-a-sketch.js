@@ -25,7 +25,7 @@ function draw({key}) {
         //MOVE OUR X & Y VALUES DEPENDING ON WHAT THE USER PRESSED
         x -= 10;
         y -= 10;
-        ctx.linto(x,y);
+        ctx.lineTo(x,y);
         ctx.stroke();
 };
 // WRITE A HANDLER FOR THE ARROW KEYS
