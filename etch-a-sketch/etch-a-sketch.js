@@ -19,14 +19,21 @@ ctx.stroke();
 // WRITE  DRAW Function
 function draw({key}) {
         console.log(key);
-}
+        //START THE PATH
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        //MOVE OUR X & Y VALUES DEPENDING ON WHAT THE USER PRESSED
+        x -= 10;
+        y -= 10;
+        ctx.linto(x,y);
+        ctx.stroke();
+};
 // WRITE A HANDLER FOR THE ARROW KEYS
 function handlekey (event) {
-        if(event.key.includes('Arrow'){
+        if(event.key.includes('Arrow')) {
                 event.preventDefault();
-                draw({key: event.key})
-                console.log('HANDLING KEY`),
-        });
+                draw({key: event.key});
+        };
 }
 // CLEAR "SHAKE" Function
 
