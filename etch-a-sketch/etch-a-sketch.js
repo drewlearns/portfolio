@@ -24,7 +24,7 @@ function draw({key}) {
         ctx.beginPath();
         ctx.moveTo(x, y);
         //MOVE OUR X & Y VALUES DEPENDING ON WHAT THE USER PRESSED
-        switch(key);{
+        switch(key){
                 default: 
                         break;
                 case 'Arrow Up':
