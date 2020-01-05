@@ -10,7 +10,7 @@ let x = Math.floor(Math.random()* width);
 let y = Math.floor(Math.random()* width);
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
-ctx.lineWidth = 50;
+ctx.lineWidth = 10;
 ctx.beginPath(); //STARTS THE DRAWING (PUTS PEN ON PAPER)
 ctx.moveTo(x, y);
 ctx.lineTo(x, y);
@@ -19,7 +19,10 @@ ctx.stroke();
 // WRITE  DRAW Function
 
 // WRITE A HANDLER FOR THE MSMediaKeySession
-
+function handlekey (event) {
+        event.preventDefault();
+        console.log('HANDLING KEY`),
+}
 // CLEAR "SHAKE" Function
 
 // LISTEN FOR ARROW KEYS
