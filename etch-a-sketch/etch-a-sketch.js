@@ -27,16 +27,16 @@ function draw({key}) {
         switch(key){
                 default: 
                         break;
-                case 'Arrow Up':
+                case 'ArrowUp':
                         y -= moveAmmount;
                         break;
-                case 'Arrow Right':
+                case 'ArrowRight':
                         x += moveAmmount;
                         break;
-                case 'Arrow Down':
+                case 'ArrowDown':
                         y += moveAmmount;
                         break;
-                case 'Arrow Left':
+                case 'ArrowLeft':
                         x -= moveAmmount;
                         break;
         }
