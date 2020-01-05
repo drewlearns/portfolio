@@ -1,6 +1,6 @@
 const   mongoose = require("mongoose"),
-        Campground = require("./campground"),
-        Comment = require("./comment"),
+        Campground = require("./models/campground"),
+        Comment = require("./models/comment"),
         commentSchema = {
                 userID: 'Number',
                 comment: 'String',
