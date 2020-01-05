@@ -17,8 +17,8 @@ ctx.lineTo(x, y);
 ctx.stroke(); 
 
 // WRITE  DRAW Function
-function draw(option) {
-        console.log(options);
+function draw({key}) {
+        console.log(key);
 }
 // WRITE A HANDLER FOR THE ARROW KEYS
 function handlekey (event) {
