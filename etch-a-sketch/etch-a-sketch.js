@@ -17,11 +17,16 @@ ctx.lineTo(x, y);
 ctx.stroke(); 
 
 // WRITE  DRAW Function
-
-// WRITE A HANDLER FOR THE MSMediaKeySession
+function draw(option) {
+        console.log(options);
+}
+// WRITE A HANDLER FOR THE ARROW KEYS
 function handlekey (event) {
-        event.preventDefault();
-        console.log('HANDLING KEY`),
+        if(event.key.includes('Arrow'){
+                event.preventDefault();
+                draw({key: event.key})
+                console.log('HANDLING KEY`),
+        });
 }
 // CLEAR "SHAKE" Function
 
