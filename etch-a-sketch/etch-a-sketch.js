@@ -4,9 +4,12 @@ console.log(canvas);
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector(`.shake`);
 // SETUP OUR CANVAS FOR DRAWING
-const width = canvas.width;
-const height = canvas.height;
+// -- MAKE A VARIABLE CALLED HEIGHT AND WIDTH FROM THE SAME PROPERTIES ON OUR CANVAS
+const { width, height} = canvas;
 console.log(width, height);
+// -- CREATE RANDOM X AND Y COORDINATES
+
+
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = 10;
