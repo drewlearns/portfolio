@@ -3,6 +3,8 @@ const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector(`.shake`);
 const moveAmmount = 10;
+let hue = 0;
+ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //GET THIS FROM MOTHER-EFFINGHSL.COM
 // SETUP OUR CANVAS FOR DRAWING
 // -- MAKE A VARIABLE CALLED HEIGHT AND WIDTH FROM THE SAME PROPERTIES ON OUR CANVAS
 const { width, height} = canvas;
@@ -19,7 +21,9 @@ ctx.stroke();
 
 // WRITE  DRAW Function
 function draw({key}) {
-        console.log(key);
+        //INCREMENT THE HUE
+        hue += 10
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //GET THIS FROM MOTHER-EFFINGHSL.COM
         //START THE PATH
         ctx.beginPath();
         ctx.moveTo(x, y);
@@ -51,6 +55,17 @@ function handlekey (event) {
         };
 }
 // CLEAR "SHAKE" Function
-
+function clearCanvas () {
+        canvas.classList.add('shake');
+        ctx.clearRect(0, 0, width, height);
+        console.log(`done the shake`);
+        canvas.addEventListener('animationend',
+                 ()=> {
+                canvas.classList.remove('shake');
+                },
+                {once: true} // auto removes the listener when it's done
+        );
+}
 // LISTEN FOR ARROW KEYS
 window.addEventListener('keydown', handlekey);
+shakeButton.addEventListener('click', clearCanvas);
