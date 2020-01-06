@@ -7,7 +7,7 @@ html {
   --grey: #e7e7e7;
   --gray: var(--grey);
   --blue: #0072B9;
-  --pink: #D60087;
+  --pink: rgb(0, 214, 29);
   --yellow: #ffc600;
   --black: #2e2e2e;
   --red: #c73737;
@@ -74,6 +74,7 @@ a.button, button, input[type="button"] {
   text-decoration: none;
   font-weight: 600;
   font-size:2rem;
+  border-radius: 5px;
 }
 
 :focus {
@@ -143,15 +144,15 @@ h6 {
         align-items: center;
         /* Hide this modal until we need it */
         opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s;
+        pointer-events: none; /*allows you to click even though it's still there.*/
+        transition: opacity 0.2s; 
       }
       .modal-outer img {
         width: 100%;
       }
       .modal-outer.open {
         opacity: 1;
-        pointer-events: all;
+        pointer-events: all; /* allows clicking in the modal again */
       }
       .modal-inner {
         max-width: 600px;
