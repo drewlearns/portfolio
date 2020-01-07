@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="base.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="index.css" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Scroll to Learn - DrewLearns.com" />
+        <meta property="og:description"
+                content="Drew Learns how to make a javascript scroll to accept Terms of service window using Intersection Obeservers instead of event listeners" />
+        <meta property="og:url" content="https://portfolio.drewlearns.com/" />
+        <meta property="og:site_name" content="Scroll To Learn" />
+        <meta property="og:image"
+                content="http://share.drewlearns.com/e6e595/Image%2525202020-01-06%252520at%25252011.16.35%252520PM.png" />
+        <meta property="og:image:secure_url"
+                content="http://share.drewlearns.com/e6e595/Image%2525202020-01-06%252520at%25252011.16.35%252520PM.png" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="683" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description"
+                content="Drew Learns how to make a javascript scroll to accept Terms of service window using Intersection Obeservers instead of event listeners" />
+        <meta name="twitter:title" content="Drew Karriker's Scroll To Learn Project" />
+        <meta name="twitter:image"
+                content="http://share.drewlearns.com/e6e595/Image%2525202020-01-06%252520at%25252011.16.35%252520PM.png" />
+        <meta property="og:description"
+                content="Drew Learns how to make a javascript scroll to accept Terms of service window using Intersection Obeservers instead of event listeners" />
+        <meta name="author" content="Drew Karriker" />
+        <meta name="date" content="2019-01-06" scheme="YYYY-MM-DD" />
+        <title>Scroll To Learn!</title>
+</head>
+
+<body>
+        <h1>
+                Drew Learns how to make <br />
+                A scroll to accept page
+        </h1>
+        <div class="wrapper">
+                <div class="terms-and-conditions">
+                        <h3>We are going to Learn about Scroll events</h3>
+                        <p>
+                                You will want to review the HTML of the Codepen at the bottom of this
+                                screen
+                        </p>
+                        <p>Let's establish our "Sudo Code"</p>
+                        <hr />
+                        <code>
+          //variables <br />
+          //function that the observer turns on or off<br />
+          //if the last element is on the screen set disabled = false<br />
+          //create the observer <br />
+          //observe
+        </code>
+                        <hr />
+                        <h3>Variables</h3>
+                        <p>We need to create our constants</p>
+                        <p>
+                                First, let's
+                                <a
+                                        href="https://drewlearns.com/2020/01/01/manipulating-the-document-object-model-part-1/#selecting">select</a>
+                                our "terms-and-conditions" class (it's the box you are reading).
+                                <code>const terms =
+            document.querySelector('.terms-and-conditions');</code>
+                        </p>
+                        <p>
+                                The only other element we care about is that button, let's select
+                                that. <code>const button = document.querySelector('.accept');</code>
+                        </p>
+                        <h3>Create a function that an observer will turn on or off</h3>
+                        <p>
+                                Let's take this in baby steps. <br /><code>function observerCallback(event){};</code>
+                        </p>
+                        <p>
+                                I'm not writing all this out tongiht in a text editor so I'm just
+                                going to send you to the
+                                <a href="https://codepen.io/DrewLearns/pen/VwYygGd">code pen</a>
+                        </p>
+                        <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+                                debitis fuga ratione velit praesentium fugit dolorem, ab odit libero
+                                perferendis eligendi eaque assumenda dignissimos tenetur facilis rerum
+                                quo omnis exercitationem delectus voluptas harum incidunt? Impedit eum
+                                nisi, consectetur earum, at laborum debitis velit reprehenderit cum
+                                sint ab fugiat? Vero quo, nulla repellendus vitae rem dolore hic
+                                veniam eligendi non, molestiae unde possimus id inventore quam commodi
+                                expedita animi eius amet delectus libero nihil. Repellat sit dolorem
+                                animi veniam perferendis cupiditate minus nisi distinctio.
+                        </p>
+                        <p>
+                                lorem some more Lorem ipsum dolor sit amet consectetur, adipisicing
+                                elit. Repellendus animi cum maiores blanditiis distinctio deleniti
+                                minima culpa explicabo dolorum dicta voluptate iure officiis, quo,
+                                laborum quaerat aspernatur eius at aut facilis ducimus quas quae
+                                doloremque! Quam esse earum, laboriosam unde aspernatur molestiae quod
+                                cum magni natus ipsum itaque veritatis maiores rerum non accusamus
+                                autem asperiores nulla ab, libero hic consequatur quae. Eveniet
+                                repellendus, commodi, doloribus sequi distinctio voluptatem, sapiente
+                                harum unde excepturi ab reiciendis minus magni voluptate voluptatum.
+                                Necessitatibus magni optio autem quod eius voluptates ratione sequi
+                                ipsum laudantium esse sint consequatur, aspernatur velit rem non modi
+                                asperiores quidem atque dignissimos saepe nobis maiores at? Temporibus
+                                vero, id voluptate placeat laborum quibusdam non facilis eum natus
+                                ipsa unde est neque ab itaque tempore? Sit, similique. Dolores
+                                praesentium est adipisci modi maxime culpa magnam maiores itaque
+                                necessitatibus, facilis numquam fuga magni nesciunt, officiis alias
+                                quidem iusto aspernatur! Iste, veritatis quis eveniet hic placeat eius
+                                doloremque magni architecto. Eius voluptatem quas facilis eos dolore.
+                                Tenetur, similique laudantium repellat harum minus odio consequatur
+                                nulla officia ut architecto rerum modi alias sint facilis excepturi
+                                obcaecati. Nesciunt veritatis molestiae optio aperiam quaerat culpa
+                                consectetur, expedita officiis pariatur modi et, laborum cupiditate
+                                deleniti velit non beatae!
+                        </p>
+                        <hr />
+                        <!-- HR TAG ADDED TO ENSURE THE LAST ELEMENT ON THE TERMS AND CONDITIONS FITS 100% ON THE PAGE AND IS THE LAST ITEM -->
+                </div>
+                <div></div>
+                <button class="accept" disabled>Learned It</button>
+        </div>
+        <br />
+        <script type="text/javascript" src="scroll.js"></script>
+        <p class="codepen" data-height="300" data-theme-id="38566" data-default-tab="css,result" data-user="DrewLearns"
+                data-slug-hash="VwYygGd" data-preview="true"
+                style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+                data-pen-title="VwYygGd">
+                <span>See the Pen
+                        <a href="https://codepen.io/DrewLearns/pen/VwYygGd"> VwYygGd</a> by Drew
+                        (<a href="https://codepen.io/DrewLearns">@DrewLearns</a>) on
+                        <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+
+</html>
