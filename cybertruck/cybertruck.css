@@ -17,14 +17,19 @@ body {
 .controls{
         display: grid;
         justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
         align-content: end;
+        grid-gap:20px; //for spacing
 }
 .key {
+        padding: 0;
         font-size: 2em;
         background: none;
         border: none;
         z-index: 100;
         color: white;
+        margin: 0;
 }
 .space {
         max-height: 812px;
@@ -46,4 +51,9 @@ p {
 }
 a {
         color: blue;
+}
+.sm-controls {
+        display: grid;
+        width: 414px;
+        margin-left: 33%;
 }
