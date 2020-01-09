@@ -20,7 +20,7 @@ body {
         align-items: center;
         grid-template-columns: 1fr 1fr 1fr;
         align-content: end;
-        grid-gap:20px; //for spacing
+        grid-gap:20px;
 }
 .key {
         padding: 0;
