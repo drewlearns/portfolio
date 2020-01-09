@@ -37,4 +37,13 @@ h2{
 }
 footer {
         text-align: center;
+        color: white;
+}
+p { 
+        color: white;
+        text-align: center;
+        font-size: .5em;
+}
+a {
+        color: blue;
 }
