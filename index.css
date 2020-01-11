@@ -1,80 +1,77 @@
-body{
-    font-family: monospace;
-  }
-  h1{
-    text-align: center;
-    font-size: 3em;
-    color:  rgb(29,66,88)
-  }
-  a{
-    position: relative;
-    color: blue;
-    font-size: 2em;
-  }
-  ul{
-    position: relative;
-    top: 2em;
-    margin-bottom: 5%;
-  }
-  li{
-    position: relative;
-    text-decoration-style: none;
-    text-align: center;
-    list-style-type: none;
-    padding-top: .5em;
-    line-height: 2em;
-  }
-  img{
-    display: block;
-    margin-left: auto;
-    width: 40%;
-    padding: 0;
-    max-width: 80px;
-  }
-  h5{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width = 80%;
-    bottom: 100px;
-    text-align: center;
-    font-size: 1em;
-    color: lightblue;
-  }
-  a{
-    color: black;
-    text-decoration: none;
-  }
-  a:hover {
-    color: rgb(110,193,228);
-  }
-  #link{
-    color: rgb(29,66,88);
-    font-size: 1em;
-  }
-  h2{
-    text-align: center;
-  }
-  /*fixed footer*/
-  footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:60px;
-   width:100%;
-   background:black;
+body {
+  font-family: monospace;
 }
-a#link{
-  color: rgb(110,193,228);
+h1 {
+  text-align: center;
+  font-size: 3em;
+  color: rgb(29, 66, 88);
 }
-a#link:hover{color: yellow;}
+li > a {
+  position: relative;
+  color: rgb(29, 66, 88);
+  font-size: 2em;
+}
+ul {
+  position: relative;
+  top: 2em;
+  margin-bottom: 5%;
+}
+li {
+  position: relative;
+  text-decoration-style: none;
+  text-align: center;
+  list-style-type: none;
+  padding-top: 0.5em;
+  line-height: 2em;
+}
+body > div.container > header > a > img {
+  display: block;
+  margin-left: auto;
+  width: 40%;
+  padding: 0;
+  max-width: 80px;
+}
+h5 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  bottom: 100px;
+  text-align: center;
+  font-size: 1em;
+  color: lightblue;
+}
+li > a {
+  color: rgb(29, 66, 88);
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(110, 193, 228);
+}
+#link {
+  color: rgb(29, 66, 88);
+  font-size: 1em;
+}
+h2 {
+  text-align: center;
+}
+/*fixed footer*/
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+  background: black;
+}
+a#link {
+  color: rgb(110, 193, 228);
+}
+a#link:hover {
+  color: yellow;
+}
 
-/* IE 6 */
-* html #footer {
-   position:absolute;
-   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
-  }
-.note{
+.note {
   color: white;
   text-transform: uppercase;
   background: grey;
@@ -83,4 +80,12 @@ a#link:hover{color: yellow;}
   width: 300px;
   border-radius: 5px;
   text-align: center;
+}
+li > a > img {
+  width: 350px;
+  border-radius: 10px;
+}
+li > p\<em > a{
+  text-decoration: none;
+  color: grey;
 }
