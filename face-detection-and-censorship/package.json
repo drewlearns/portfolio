@@ -1,0 +1,14 @@
+{
+  "name": "face-detection-and-censorship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.0.0-alpha.2.1"
+  }
+}
