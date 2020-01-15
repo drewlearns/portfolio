@@ -119,9 +119,56 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"shopping.js":[function(require,module,exports) {
 //SELECTORS AND CONSTANTS INCLUDING AN ARRAY TO HOLD OUR STATE
-//LISTEN FOR WHEN SOMEONE TYPES INTO THE INPUT
-//KEEP TRACK OF THE ITEMS TO SEE IF THEY ARE COMPLETE
+var shoppingForm = document.querySelector('.shopping');
+var list = document.querySelector('.list');
+var items = []; //HANDLE SUBMIT EVENT
+
+function handleSubmit(event) {
+  event.preventDefault();
+  console.log('submitted!');
+  var name = event.currentTarget.item.value;
+  if (!name) return; //IF EMPTY INPUT DO NOTHING
+
+  console.log(name);
+  var item = {
+    name: name,
+    id: Date.now(),
+    complete: false
+  }; //PUSH ITEMS INTO OUR STATE
+
+  items.push(item);
+  console.log("There are now ".concat(items.length, " in your state."));
+  event.target.reset(); // displayItems();
+
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+}
+
+; //DISPLAY ITEMS
+
+function displayItems() {
+  console.log(items);
+  var html = items.map(function (item) {
+    return "<li class=\"shopping-list-item\">\n                <input type=\"checkbox\">\n                <span class=\"itemName\">".concat(item.name, "</span>\n                <button aria-label=\"Remove ").concat(item.name, "\" value=\"").concat(item.name, "\">&times;</button>\n                </li><hr>");
+  }).join(''); // console.log(html);
+
+  list.innerHTML = html;
+}
+
+;
+
+function mirrorToLocalStorage() {
+  console.info('Saving items to localStorage');
+  localStorage.setItem('items', items.toString());
+} //KEEP TRACK OF THE ITEMS TO SEE IF THEY ARE COMPLETE
 //RENDER OUT A LIST OF ALL ITEMS CREATED
+//LISTEN FOR WHEN A USER SUBMITS
+
+
+shoppingForm.addEventListener('submit', handleSubmit);
+list.addEventListener('itemsUpdated', displayItems); // list.addEventListener('itemsUpdated', event => {
+//         console.log(event);
+
+list.addEventListener('itemsUpdated', mirrorToLocalStorage);
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

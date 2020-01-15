@@ -114,7 +114,7 @@ h6 {
   color: var(--black);
   text-shadow: none;
 }
-
+/* PROJECT SPECIFIC CSS BELOW HERE*/
 body {
   min-height: 100vh;
   display: grid;
@@ -169,6 +169,31 @@ body {
 .shopping-item button:hover {
   transform: scale(1.4);
 }
-
+.shopping-list-item{
+        text-overflow: wrap;
+}
+li > input {
+        margin: auto;
+        padding-right: 10px;
+}
+li > 
+.itemName{
+        display: inline-block;
+        width: 80%;
+        word-wrap: break-word;
+        vertical-align: bottom;
+        padding-left: 4px;
+        text-transform: capitalize;
+}
+li > button {  
+        margin-left: auto;
+        margin-top: 2px;
+        margin-bottom: 0;
+        margin-right: 0;
+        width: 14.6%;
+}
+ul > hr {
+        opacity: .2;
+}
 
 /*# sourceMappingURL=/shopping.c64a7cbe.css.map */
