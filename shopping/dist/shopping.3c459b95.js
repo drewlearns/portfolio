@@ -127,9 +127,8 @@ function handleSubmit(event) {
   event.preventDefault();
   console.log('submitted!');
   var name = event.currentTarget.item.value;
-  if (!name) return; //IF EMPTY INPUT DO NOTHING
-
   console.log(name);
+  if (!name) return;
   var item = {
     name: name,
     id: Date.now(),
@@ -138,7 +137,8 @@ function handleSubmit(event) {
 
   items.push(item);
   console.log("There are now ".concat(items.length, " in your state."));
-  event.target.reset(); // displayItems();
+  event.currentTarget.reset(); //clears the form
+  // displayItems();
 
   list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
@@ -146,9 +146,9 @@ function handleSubmit(event) {
 ; //DISPLAY ITEMS
 
 function displayItems() {
-  console.log(items);
+  // console.log(items);
   var html = items.map(function (item) {
-    return "<li class=\"shopping-list-item\">\n                <input type=\"checkbox\">\n                <span class=\"itemName\">".concat(item.name, "</span>\n                <button aria-label=\"Remove ").concat(item.name, "\" value=\"").concat(item.name, "\">&times;</button>\n                </li><hr>");
+    return "<li class=\"shopping-list-item\">\n                <input type=\"checkbox\" value=\"".concat(item.id, "\" ").concat(item.complete ? 'checked' : '', ">\n                <span class=\"itemName\">").concat(item.name, "</span>\n                <button aria-label=\"Remove ").concat(item.name, "\" value=\"").concat(item.id, "\">&times;</button>\n                </li><hr>");
   }).join(''); // console.log(html);
 
   list.innerHTML = html;
@@ -158,17 +158,68 @@ function displayItems() {
 
 function mirrorToLocalStorage() {
   console.info('Saving items to localStorage');
-  localStorage.setItem('items', items.toString());
-} //KEEP TRACK OF THE ITEMS TO SEE IF THEY ARE COMPLETE
-//RENDER OUT A LIST OF ALL ITEMS CREATED
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+;
+
+function restoreFromLocalStorage() {
+  console.info('Restored from localStorage');
+  var lsItems = JSON.parse(localStorage.getItem('items'));
+
+  if (lsItems.length) {
+    //truthy to check if there is anything in the array
+    lsItems.forEach(function (item) {
+      return items.push(item);
+    });
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
+  }
+
+  ;
+}
+
+;
+
+function deleteItem(id) {
+  items = items.filter(function (item) {
+    return item.id !== id;
+  });
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+}
+
+; //KEEP TRACK OF THE ITEMS TO SEE IF THEY ARE COMPLETE
+
+function markAsComplete(id) {
+  console.log('Marking as complete', id);
+  var itemReflected = items.find(function (item) {
+    return item.id === id;
+  });
+  console.log(itemReflected);
+  itemReflected.complete = !itemReflected.complete;
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+} //RENDER OUT A LIST OF ALL ITEMS CREATED
 //LISTEN FOR WHEN A USER SUBMITS
 
 
 shoppingForm.addEventListener('submit', handleSubmit);
-list.addEventListener('itemsUpdated', displayItems); // list.addEventListener('itemsUpdated', event => {
-//         console.log(event);
-
+list.addEventListener('itemsUpdated', displayItems);
 list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+list.addEventListener('click', function (event) {
+  var id = parseInt(event.target.value);
+
+  if (event.target.matches('button')) {
+    deleteItem(id);
+  }
+
+  ;
+
+  if (event.target.matches('input[type="checkbox"]')) {
+    markAsComplete(id);
+  }
+
+  ;
+});
+restoreFromLocalStorage();
 },{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
