@@ -17,7 +17,7 @@ function Gallery(gallery) {
                 // console.info('Opening Modal');
                 //First check if the modal is already open because animations
                 if (modal.matches('.open')) {
-                        console.info('Next Modal is open');
+                        console.info('New Modal is open');
                         return; //stops the function from running
                 }
                 modal.classList.add('open');
