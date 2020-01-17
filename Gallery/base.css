@@ -7,7 +7,7 @@ html {
   --grey: #e7e7e7;
   --gray: var(--grey);
   --blue: #0072B9;
-  --pink: #D60087;
+  --pink: rgb(8, 202, 223);
   --yellow: #ffc600;
   --black: #2e2e2e;
   --red: #c73737;
