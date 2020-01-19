@@ -1,4 +1,3 @@
 **/node_modules/**
 **/.cache/**
 **/node_modules/term-size/vendor/windows/term-size.exe
-**/.DS_Store
