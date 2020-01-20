@@ -43,7 +43,7 @@ Gallery.prototype.openModal = function () {
                 return; //stops the function from running
         };
         this.modal.classList.add("open");
-        console.log("CurrentImage at line 46 ", currentImage);
+        console.log("CurrentImage at line 46 ", this.currentImage);
         //EVENT LISTENERS TO BE BOUND WHEN OPENING
         window.addEventListener("keyup", this.handleKeyUp);
         this.nextButton.addEventListener("click", this.showNextImage);
@@ -73,13 +73,13 @@ Gallery.prototype.handleKeyUp = function (event) {
 
 //NEXT BUTTON
 Gallery.prototype.showNextImage = function () {
-        console.log("current image next sibling ", currentImage.nextElementSibling, " showing next image ", gallery.firstElementChild);
+        console.log("current image next sibling ", this.currentImage.nextElementSibling, " showing next image ", this.gallery.firstElementChild);
         this.showImage(
                 this.currentImage.nextElementSibling || this.gallery.firstElementChild
         );
 };
 Gallery.prototype.showPrevImage = function () {
-        console.log(currentImage.prevElementSibling, " showing previous image ", gallery.lasElementChild);
+        console.log(this.currentImage.prevElementSibling, " showing previous image ", this.gallery.lasElementChild);
         this.showImage(
                 this.currentImage.previousElementSibling || this.gallery.lastElementChild
         );
