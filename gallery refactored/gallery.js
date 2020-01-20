@@ -11,6 +11,7 @@ function Gallery(gallery) {
         this.prevButton = this.modal.querySelector(".prev");
         this.nextButton = this.modal.querySelector(".next");
         //BINDING METHODS 
+        console.log("this is the issue with showNextImage: ", this.showNextImage);
         this.showNextImage = this.showNextImage.bind(this);
         this.handleKeyUp = this.handleKeyUp.bind(this);
         this.showPrevImage = this.showPrevImage.bind(this);
@@ -44,9 +45,9 @@ Gallery.prototype.openModal = function () {
         this.modal.classList.add("open");
         // console.log(currentImage);
         //EVENT LISTENERS TO BE BOUND WHEN OPENING
-        window.addEventListener("keyup", (event) => this.handleKeyUp(event));
-        this.nextButton.addEventListener("click", () => this.showNextImage());
-        this.prevButton.addEventListener("click", () => this.showPrevImage());
+        window.addEventListener("keyup", this.handleKeyUp());
+        this.nextButton.addEventListener("click",  this.showNextImage());
+        this.prevButton.addEventListener("click", this.showPrevImage());
 };
 //CLOSE MODAL KICKED OFF BY A HANDLER
 Gallery.prototype.closeModal = function () {
@@ -58,13 +59,13 @@ Gallery.prototype.closeModal = function () {
         this.prevButton.removeEventListener("click", this.showPrevImage);
 };
 //HANDLE CLICKING TO CLOSE MODAL
-Gallery.prototype.handleClickOutside = function () {
+Gallery.prototype.handleClickOutside = function (event) {
         if (event.target === event.currentTarget) {
                 this.closeModal();
         };
 };
 //HANDLE KEYUP TO CLOSE MODAL, NEXT & PREVIOUS
-Gallery.prototype.handleKeyUp = function () {
+Gallery.prototype.handleKeyUp = function (event) {
         if (event.key === "Escape") return this.closeModal();
         if (event.key === "ArrowRight") return this.showNextImage();
         if (event.key === "ArrowLeft") return this.showPrevImage();
@@ -72,14 +73,16 @@ Gallery.prototype.handleKeyUp = function () {
 
 //NEXT BUTTON
 Gallery.prototype.showNextImage = function () {
-        console.log(currentImage.nextElementSibling);
-        console.log(gallery.firstElementChild);
-        this.showImage(this.currentImage.nextElementSibling || this.gallery.firstElementChild);
+        console.log(currentImage.nextElementSibling, " showing next image ", gallery.firstElementChild, );
+        this.showImage(
+                this.currentImage.nextElementSibling || this.gallery.firstElementChild
+        );
 };
 Gallery.prototype.showPrevImage = function () {
-        console.log(currentImage.prevElementSibling);
-        console.log(gallery.lasElementChild);
-        this.showImage(this.currentImage.previousElementSibling || this.gallery.lastElementChild);
+        console.log(currentImage.prevElementSibling, " showing previous image ", gallery.lasElementChild);
+        this.showImage(
+                this.currentImage.previousElementSibling || this.gallery.lastElementChild
+        );
 };
 //SHOW IMAGE
 Gallery.prototype.showImage= function (el) {
@@ -99,4 +102,4 @@ Gallery.prototype.showImage= function (el) {
         this.openModal();
 };
 const gallery1 = Gallery(document.querySelector(".gallery1"));
-// const gallery2 = Gallery(document.querySelector(".gallery2"));
+const gallery2 = Gallery(document.querySelector(".gallery2"));
