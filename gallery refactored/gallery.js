@@ -6,7 +6,7 @@ function Gallery(gallery) {
         this.gallery = gallery;
         // SELECT ELEMENTS WE NEED
         this.images = Array.from(gallery.querySelectorAll("img"));
-        console.log(images);
+        console.log(this.images);
         this.modal = document.querySelector(".modal");
         this.prevButton = this.modal.querySelector(".prev");
         this.nextButton = this.modal.querySelector(".next");
@@ -43,11 +43,11 @@ Gallery.prototype.openModal = function () {
                 return; //stops the function from running
         };
         this.modal.classList.add("open");
-        // console.log(currentImage);
+        console.log("CurrentImage at line 46 ", currentImage);
         //EVENT LISTENERS TO BE BOUND WHEN OPENING
-        window.addEventListener("keyup", this.handleKeyUp());
-        this.nextButton.addEventListener("click",  this.showNextImage());
-        this.prevButton.addEventListener("click", this.showPrevImage());
+        window.addEventListener("keyup", this.handleKeyUp);
+        this.nextButton.addEventListener("click", this.showNextImage);
+        this.prevButton.addEventListener("click", this.showPrevImage);
 };
 //CLOSE MODAL KICKED OFF BY A HANDLER
 Gallery.prototype.closeModal = function () {
@@ -73,7 +73,7 @@ Gallery.prototype.handleKeyUp = function (event) {
 
 //NEXT BUTTON
 Gallery.prototype.showNextImage = function () {
-        console.log(currentImage.nextElementSibling, " showing next image ", gallery.firstElementChild, );
+        console.log("current image next sibling ", currentImage.nextElementSibling, " showing next image ", gallery.firstElementChild);
         this.showImage(
                 this.currentImage.nextElementSibling || this.gallery.firstElementChild
         );
@@ -85,7 +85,7 @@ Gallery.prototype.showPrevImage = function () {
         );
 };
 //SHOW IMAGE
-Gallery.prototype.showImage= function (el) {
+Gallery.prototype.showImage = function (el) {
         if (!el) {
                 console.log("No image to show");
                 return;
@@ -101,5 +101,5 @@ Gallery.prototype.showImage= function (el) {
         this.currentImage = el;
         this.openModal();
 };
-const gallery1 = Gallery(document.querySelector(".gallery1"));
-const gallery2 = Gallery(document.querySelector(".gallery2"));
+const gallery1 = new Gallery(document.querySelector(".gallery1"));
+// const gallery2 = new Gallery(document.querySelector(".gallery2"));
