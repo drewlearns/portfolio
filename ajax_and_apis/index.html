@@ -7,11 +7,27 @@
         <title>AJAX</title>
 </head>
 <body>
+        <p class="user"></p>
+        <img class="image">
 <script>
-        const drewPromise = fetch(endpoint);
-        drewPromise.then(response => { 
-                console.log('drewPromise');
-        }).cattch(handleError);
+        const baseEndpoint = 'https://api.github.com';
+        const usersEndpoint = `${baseEndpoint}/users`;
+        const userElement = document.querySelector('.user');
+        const imgSrc = document.querySelector('.image');
+
+        async function displayUser(username) {  
+                userElement.textContent = "Loading..."
+                const response = await fetch(`${usersEndpoint}/${username}`);
+                const data = await response.json();
+                userElement.textContent = `${data.name} - ${data.blog}`;
+                imgSrc.src = `${data.avatar_url}`;
+        };
+        function handleError(err) {
+                console.log('ERROR!!!');
+                console.log(err);
+                userElement = "Error - Something Went Wrong!"
+        };
+        displayUser('drewlearns').catch(handleError);
 </script>
 </body>
 </html>
