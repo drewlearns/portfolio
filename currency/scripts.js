@@ -1,5 +1,8 @@
+const form = document.querySelector('.app form');
 const fromSelect = document.querySelector('[name="from_currency"]');
+const fromInput = document.querySelector('[name="from_amount"]');
 const toSelect = document.querySelector('[name="to_currency"]');
+const toEl = document.querySelector('body > div.app > form > p.to_amount'); 
 const endpoint = 'https://api.exchangeratesapi.io/latest';
 const ratesByBase = {};
 const currencies = {
@@ -52,13 +55,38 @@ async function fetchRates(base = 'USD'){
         return rates;
 };
 
-function convert(amount, from, to){
+async function convert(amount, from, to){
         //CHECK TO SEE IF WE HAVE THE RATES TO CONVERT FROM FIRST
-        if (!rattesByBase[from]){
+        if (!ratesByBase[from]){
                 console.log('Oh no, we don\'t have the ${from} to convert to ${to}. So let\'s go get it!');
+                const rates = await fetchRates(from);
+                //STORE FOR NEXT TIME
+                ratesByBase[from] = rates;
         };
+        //CONVERT THAT AMOUNT THAT WAS PASSED
+        const rate = ratesByBase[from].rates[to];
+        const convertedAmount = rate * amount;
+        console.log(`${amount} ${from} is ${convertedAmount} in ${to}`);
+        return convertedAmount;
+};
+function formatCurrency(amount, currency){
+        return Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency,
+        }).format(amount);
+};
+
+async function handleInput(event){
+        const rawAmount = await convert(
+                fromInput.value, 
+                fromSelect.value, 
+                toSelect.value);
+        console.log(rawAmount);
+        toEl.textContent = formatCurrency(rawAmount, toSelect.value);
 };
 
 const optionsHTML = generateOptions(currencies);
 fromSelect.innerHTML = optionsHTML;
 toSelect.innerHTML = optionsHTML;
+
+form.addEventListener('input', handleInput);
