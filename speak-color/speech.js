@@ -20,9 +20,9 @@ function displayColors(colors){
 function start () {
         //CHECK TO SEE IF THE USER'S BROWSER SUPPORTS SPEECH RECOGNITION
         if (!('SpeechRecognition' in window)) {
-                alert(`
+                console.log(`
                         Sorry your browser doesn't support speech Recognition.
-                        I recommend chrome web browser. -Drew
+                        I recommend chrome web browser with experimental tools enabled. -Drew
         `);
         return;
         };
@@ -32,7 +32,7 @@ function start () {
         const recognition = new SpeechRecognition();
         recognition.continous = true; // doesn't stop after it thinks you are done
         recognition.intermResult = true; // Types as you speak
-        console.log(recognition);
+        // console.log(recognition);
         recognition.onresult = handleResult;
         recognition.start();
 };

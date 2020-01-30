@@ -1,5 +1,5 @@
 function logWords(results){
-//         console.log(results[results.length -1][0].transcript);
+        console.log(results[results.length -1][0].transcript);
 };
 import {isValidColor} from './colors.js'
 export function handleResult({results}){
