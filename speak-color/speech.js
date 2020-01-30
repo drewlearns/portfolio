@@ -17,7 +17,7 @@ function displayColors(colors){
                 `).join('');
 };
 
-function start () {
+export function start () {
         //CHECK TO SEE IF THE USER'S BROWSER SUPPORTS SPEECH RECOGNITION
         if (!('SpeechRecognition' in window)) {
                 console.log(`
@@ -31,7 +31,7 @@ function start () {
         //MAKE NEW SPEECH RECOGNITION
         const recognition = new SpeechRecognition();
         recognition.continous = true; // doesn't stop after it thinks you are done
-        recognition.intermResult = true; // Types as you speak
+        recognition.interimResults = true; // Types as you speak
         // console.log(recognition);
         recognition.onresult = handleResult;
         recognition.start();
