@@ -4,8 +4,14 @@
   "description": "Speak a color",
   "main": "colors.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "colors.js": "^1.2.4"
+  }
 }
