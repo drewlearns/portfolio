@@ -1,6 +1,6 @@
 //IMPORTS
-import {handleResult} from 'handlers.js';
-import {isDark, colorsByLength} from 'colors.js';
+import {handleResult} from './handlers.js';
+import {isDark, colorsByLength} from './colors.js';
 // import {isValidColor} from './colors.js';
 
 const colorsEl = document.querySelector('.colors');
