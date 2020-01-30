@@ -1,10 +1,11 @@
 function logWords(results){
-        console.log(results[results.length -1][0].transcript);
+        // return results[results.length -1][0].transcript;
 };
 import {isValidColor} from './colors.js'
 export function handleResult({results}){
         logWords(results);
         const words = results[results.length -1][0].transcript;
+        console.log(words);
         // LOWERCASE ALL THE THINGS
         let color = words.toLowerCase();
         //REMOVE SPACES
@@ -15,6 +16,7 @@ export function handleResult({results}){
         const colorSpan = document.querySelector(`.${color}`);
         colorSpan.classList.add('got');
         console.info('That was a valid color');
+        // console.info(results[results.length -1][0].transcript);
         console.info(color)
         // CHANGE BACKGOUND COLOR
         document.body.style.backgroundColor = color;
