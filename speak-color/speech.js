@@ -1,22 +1,18 @@
 //IMPORTS
 import {handleResult} from './handlers.js';
-import {colors, isDark, colorsByLength} from './colors.js';
+import {isDark, colorsByLength} from './colors.js';
 // import {isValidColor} from './colors.js';
 
-//VARIABLES
 const colorsEl = document.querySelector('.colors');
 window.SpeechRecognition = 
         window.SpeechRecognition || 
         window.webkitSpeechRecognition
 
-//LIB
 function displayColors(colors){
-        return colors
-                .map(
-                        color => 
-                                `<span class="color" ${isDar(color) ? 'dark' : ''} style="background${color}>${color}</span>`
-                )
-                .join('');
+        console.log(colors);
+        return colors.map(color =>  `
+                <span class="color" ${isDark(color) ? 'dark' : ''} style="background${color}>${color}</span>
+                `).join('');
 };
 
 function start () {
@@ -24,7 +20,7 @@ function start () {
         if (!('SpeechRecognition' in window)) {
                 alert(`
                         Sorry your browser doesn't support speech Recognition.
-                        I recommend chrome web browser.
+                        I recommend chrome web browser. -Drew
         `);
         return;
         };
@@ -39,7 +35,5 @@ function start () {
         recognition.start();
 };
 
-//INIT
 start();
-displayColors();
 colorsEl.innerHTML = displayColors(colorsByLength);

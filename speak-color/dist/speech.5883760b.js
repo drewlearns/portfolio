@@ -320,13 +320,13 @@ var _colors = require("./colors.js");
 
 //IMPORTS
 // import {isValidColor} from './colors.js';
-//VARIABLES
 var colorsEl = document.querySelector('.colors');
-window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; //LIB
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 function displayColors(colors) {
+  console.log(colors);
   return colors.map(function (color) {
-    return "<span class=\"color\" ".concat(isDar(color) ? 'dark' : '', " style=\"background").concat(color, ">").concat(color, "</span>");
+    return "\n                <span class=\"color\" ".concat((0, _colors.isDark)(color) ? 'dark' : '', " style=\"background").concat(color, ">").concat(color, "</span>\n                ");
   }).join('');
 }
 
@@ -335,7 +335,7 @@ function displayColors(colors) {
 function start() {
   //CHECK TO SEE IF THE USER'S BROWSER SUPPORTS SPEECH RECOGNITION
   if (!('SpeechRecognition' in window)) {
-    alert("\n                        Sorry your browser doesn't support speech Recognition.\n                        I recommend chrome web browser.\n        ");
+    alert("\n                        Sorry your browser doesn't support speech Recognition.\n                        I recommend chrome web browser. -Drew\n        ");
     return;
   }
 
@@ -353,10 +353,8 @@ function start() {
   recognition.start();
 }
 
-; //INIT
-
+;
 start();
-displayColors();
 colorsEl.innerHTML = displayColors(_colors.colorsByLength);
 },{"./handlers.js":"handlers.js","./colors.js":"colors.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
