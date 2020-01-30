@@ -9,9 +9,11 @@ window.SpeechRecognition =
         window.webkitSpeechRecognition
 
 function displayColors(colors){
-        console.log(colors);
-        return colors.map(color =>  `
-                <span class="color" ${isDark(color) ? 'dark' : ''} style="background${color}>${color}</span>
+        return colors.map(color =>  
+                `<span class="color ${color} ${
+                        isDark(color) ? 'dark' : ''
+                }" style="background: ${color};">${color}
+                </span>
                 `).join('');
 };
 
@@ -25,7 +27,7 @@ function start () {
         return;
         };
         //SPEECH RECOGNITION IS SUPPORTED
-        console.log('Starting Speech Recognition');
+        console.info('Starting Speech Recognition');
         //MAKE NEW SPEECH RECOGNITION
         const recognition = new SpeechRecognition();
         recognition.continous = true; // doesn't stop after it thinks you are done
