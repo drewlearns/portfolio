@@ -1,5 +1,5 @@
 import {hslToRgb} from './utils.js';
-const regeneratorRuntime = require('regenerator-runtime');
+// const regeneratorRuntime = require('regenerator-runtime'); //added for parcel and npm
 const WIDTH = 1500;
 const HEIGHT = 1500;
 const canvas = document.querySelector('canvas');
