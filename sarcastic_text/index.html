@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Generator</title>
+    <link rel="stylesheet" href="base.css" />
+    <style></style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text Generator</title>
-  <link rel="stylesheet" href="base.css">
-  <style>
-   
-  </style>
-</head>
+  <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://codingwithdrew.com">
+          <img
+            src="/media/Black-Logo-Coding-With-Drew.png"
+            alt="codingiwthdrew"
+            width="150"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://portfolio.codingwithdrew.com"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="https://drewlearns.com"
+                >DrewLearns.com</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://codingwithdrew.com/courses/"
+                >Courses</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="typer">
+      <label for="sarcastic">
+        <input
+          type="radio"
+          value="sarcastic"
+          id="sarcastic"
+          name="filter"
+          checked
+        />
+        Sarcastic
+      </label>
+      <label for="funky">
+        <input type="radio" value="funky" id="funky" name="filter" />
+        Funky
+      </label>
+      <label for="unable">
+        <input type="radio" value="unable" id="unable" name="filter" />
+        Unable to Structure a Sentence
+      </label>
+      <textarea name="text">
+so I was thinking about going to the store.</textarea
+      >
+      <p class="result"></p>
+    </div>
 
-<body>
-
-  <div class="typer">
-    <label for="sarcastic">
-      <input type="radio" value="sarcastic" id="sarcastic" name="filter" checked>
-      Sarcastic
-    </label>
-    <label for="funky">
-      <input type="radio" value="funky" id="funky" name="filter">
-      Funky
-    </label>
-    <label for="unable">
-      <input type="radio" value="unable" id="unable" name="filter">
-      Unable to Structure a Sentence
-    </label>
-    <textarea name="text">so I was thinking about going to the store.</textarea>
-    <p class="result"></p>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
+  <footer>
+    <h5 style="color: white">
+      Learn along with me on similar projects at
+      <a id="link" href="//codingwithdrew.com/">DrewLearns.com</a>
+    </h5>
+  </footer>
 </html>
