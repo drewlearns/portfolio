@@ -9,16 +9,11 @@
   transition: transform 0.2s;
   z-index: 0;
 }
-#twitter {
-  position: fixed;
-  bottom: 400px;
-  right: 50%;
-  z-index: -999;
-}
+
 .footer{
         position: fixed;
         bottom: 0;
-        right: 0
+  text-align: end;
 }
 .sm-controls{
         position: fixed;
