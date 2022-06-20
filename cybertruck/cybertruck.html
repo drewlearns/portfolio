@@ -1,71 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="cybertruck.css" />
-    <title>Cyber Truck</title>
+
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="cybertruck.css" />
+        <title>Cyber Truck</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Drew Learns How To Use Event Listeners To Drive a Cyber Truck" />
-        <meta
-                property="og:description"
-                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile"
-        />
+        <meta property="og:description"
+                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile" />
         <meta property="og:url" content="https://portfolio.drewlearns.com/cybertruck/cybertruck.html" />
         <meta property="og:site_name" content="Drive A Cyber Truck | DrewLearns.com" />
-        <meta
-                property="og:image"
-                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png"
-        />
-        <meta
-                property="og:image:secure_url"
-                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png"
-        />
+        <meta property="og:image"
+                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png" />
+        <meta property="og:image:secure_url"
+                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png" />
         <meta property="og:image:width" content="1024" />
         <meta property="og:image:height" content="683" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-                name="twitter:description"
-                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile  "
-        />
+        <meta name="twitter:description"
+                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile  " />
         <meta name="twitter:title" content="Drew Karriker's Web Developer Portfolio" />
-        <meta
-                name="twitter:image"
-                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png"
-        />
-        <meta
-                property="og:description"
-                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile"
-        />
+        <meta name="twitter:image"
+                content="http://share.drewlearns.com/b33db6/Image%2525202020-01-08%252520at%25252010.04.09%252520PM.png" />
+        <meta property="og:description"
+                content="I hear you want to drive a Cyber Truck? Well now you can in this little Javascript project I created! You can increase it's speed, recharge it, use your keypad or even buttons for mobile" />
         <meta name="author" content="Drew Karriker" />
         <meta name="date" content="2019-01-07" scheme="YYYY-MM-DD" />
-  </head>
-        <h2>I Hear You Want to Drive a Cyber Truck?</h2>
-    <img
-      width="250px"
-      height="140px"
-      class="cybertruck"
-      src="cybertruck.png"
-      alt="cyber truck"
-    />
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+                crossorigin="anonymous">
+</head>
+<nav class="navbar bg-light">
+        <div class="container-fluid">
+                <a class="navbar-brand" href="https://codingwithdrew.com">
+                        <img src="/media/Black-Logo-Coding-With-Drew.png" alt="codingiwthdrew" width="150"
+                                class="d-inline-block align-text-top" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                                <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                                href="https://portfolio.codingwithdrew.com">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                                href="https://drewlearns.com">DrewLearns.com</a>
+                                </li>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="https://codingwithdrew.com/courses/">Courses</a>
+                                </li>
+                        </ul>
+                </div>
+        </div>
+</nav>
+<h2>I Hear You Want to Drive a Cyber Truck?</h2>
+<img width="250px" height="140px" class="cybertruck" src="cybertruck.png" alt="cyber truck" />
 <div class="space"></div>
 <div class="sm-controls">
-    <div class="controls">
-        <button class="key gas">⏩</button>
-        <button class="key buttonUp">⬆️</button>
-        <button class="key restart">↩️</button>
-        <button class="key buttonLeft">⬅️</button>
-        <button class="key buttonDown">⬇️</button>
-        <button class="key buttonRight">➡️</button>
-    </div>
+        <div class="controls">
+                <button class="key gas">⏩</button>
+                <button class="key buttonUp">⬆️</button>
+                <button class="key restart">↩️</button>
+                <button class="key buttonLeft">⬅️</button>
+                <button class="key buttonDown">⬇️</button>
+                <button class="key buttonRight">➡️</button>
+        </div>
 </div>
 <footer>Check out my portfolio at <a href="https://drewlearns.com">DrewLearns.com</a></footer>
 <p>This site is for educational purposes only.</p>
-  </body>
-  <script type="text/javascript" src="cybertruck.js"></script>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="cybertruck.js"></script>
+<footer>
+        <h5 style="color: white;">
+                Learn along with me on similar projects at
+                <a id="link" href="//codingwithdrew.com/">DrewLearns.com</a>
+        </h5>
+</footer>
+
 </html>
