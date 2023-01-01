@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.7.14",
     "nodemon": "^2.0.1",
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.2"
   },
   "devDependencies": {},
   "scripts": {
